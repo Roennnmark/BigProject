@@ -96,7 +96,7 @@ public class MenuService(FootballPlayerService playerService)
             Console.WriteLine("\n    ---- Player List ----");
             foreach (var player in playerList)
             {
-                Console.WriteLine($"    {player.FirstName} {player.LastName}");
+                Console.WriteLine($"\n    {player.FirstName} {player.LastName}");
                 Console.WriteLine($"    {player.Email}");
                 Console.WriteLine("    ---------------------");
             }
@@ -117,7 +117,7 @@ public class MenuService(FootballPlayerService playerService)
         {
             Console.Clear();
             Console.WriteLine("\n    ---- Player Details ----");
-            Console.WriteLine($"    Name: {player.FirstName} {player.LastName}");
+            Console.WriteLine($"\n    Name: {player.FirstName} {player.LastName}");
             Console.WriteLine($"    Email: {player.Email}");
             Console.WriteLine($"    Position: {player.Position}");
             Console.WriteLine($"    Nationality: {player.Nationality}");
