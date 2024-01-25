@@ -15,14 +15,14 @@ public class MenuService(FootballPlayerService playerService)
         while (true)
         {
             Console.Clear();
-            Console.WriteLine("#####  Football Players Menu  #####");
+            Console.WriteLine("\n    #####  Football Players Menu  #####");
             Console.WriteLine("\n   1. Add Football Player.");
             Console.WriteLine("   2. View Player List.");
             Console.WriteLine("   3. View Specified Player Details.");
             Console.WriteLine("   4. Update a Player.");
             Console.WriteLine("   5. Delete a Player.");
             Console.WriteLine("   6. Exit Application.");
-            Console.Write("\n   Enter A Menu Option: ");
+            Console.Write("\n   Enter a Menu Option: ");
             var option = Console.ReadLine();
 
             switch (option)
@@ -57,10 +57,10 @@ public class MenuService(FootballPlayerService playerService)
     public static void AddNewPlayer(MenuService menuService)
     {
         Console.Clear();
-        Console.WriteLine("\n    Add New Football Player here!");
+        Console.WriteLine("\n    Add New Football Player Here!");
         var form = new FootballPlayerDto();
 
-        Console.Write("    First Name: ");
+        Console.Write("\n    First Name: ");
         form.FirstName = Console.ReadLine()!;
         Console.Write("    Last Name: ");
         form.LastName = Console.ReadLine()!;
@@ -108,7 +108,7 @@ public class MenuService(FootballPlayerService playerService)
     {
         var players = menuService._playerService.GetAllPlayers();
         Console.Clear();
-        Console.Write("\n    Enter the Email of the player to view details: ");
+        Console.Write("\n    Enter E-mail of the player to view details: ");
         var email = Console.ReadLine()!;
 
         var player = players.FirstOrDefault(x => x.Email == email);
@@ -182,16 +182,12 @@ public class MenuService(FootballPlayerService playerService)
 
             if (menuService._playerService.UpdatePlayer(updateEmail, updatedPlayer))
             {
-                Console.WriteLine($"\n    Player with email '{updateEmail}' has been updated.");
-            }
-            else
-            {
-                Console.WriteLine($"\n    Failed to update player with email: {updateEmail}");
+                Console.WriteLine($"\n    Player with e-mail '{updateEmail}' has been updated.");
             }
         }
         else
         {
-            Console.WriteLine("\n    Email does not exist.");
+            Console.WriteLine("\n    E-mail does not exist.");
         }
     }
 
@@ -202,24 +198,24 @@ public class MenuService(FootballPlayerService playerService)
         var players = menuService._playerService.GetAllPlayers();
 
         Console.Clear();
-        Console.Write("\n    Enter the Email of the player you want to delete: ");
+        Console.Write("\n    Enter the E-mail of the player you want to delete: ");
         var email = Console.ReadLine()!;
         var player = players.FirstOrDefault(x => x.Email == email);
         if (player != null)
         {
             menuService._playerService.DeleteFootballPlayer(email);
-            Console.WriteLine($"\n    Player with email '{email}' has been deleted");
+            Console.WriteLine($"\n    Player with e-mail '{email}' has been deleted");
         }
         else
         {
-            Console.WriteLine($"\n    Player not found with email: {email}");
+            Console.WriteLine($"\n    Player not found with e-mail: {email}");
         }
         Console.ReadKey();
     }
     public static void ShowExitAppOption()
     {
         Console.Clear();
-        Console.Write("\n-   Are you sure? (y/n): ");
+        Console.Write("\n    Are you sure? (y/n): ");
         var choice = Console.ReadLine() ?? "";
 
         if (choice.ToLower() == "y")
