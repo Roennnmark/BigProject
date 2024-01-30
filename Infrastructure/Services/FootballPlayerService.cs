@@ -134,11 +134,7 @@ public class FootballPlayerService(BirthDatesRepository birthDatesRepository, Fo
                 entity.BirthDates.BirthDay = updatePlayer.BirthDay;
             });
         }
-        catch (Exception ex)
-        {
-            Debug.WriteLine("ERROR :: " + ex.Message);
-            return false;
-        }
+        catch (Exception ex) { Debug.WriteLine("ERROR :: " + ex.Message); return false; }
     }
 
     public bool DeleteFootballPlayer(string email)

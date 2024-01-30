@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="Presentation.WpfApp.Views.PlayerAddView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Presentation.WpfApp.Views"
+             
+             xmlns:viewmodels="clr-namespace:Presentation.WpfApp.ViewModels"
+             d:DataContext="{d:DesignInstance Type=viewmodels:PlayerAddViewModel}"
+             
+             
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <StackPanel>
+            <Label Content="Add New Player" />
+
+            <Label Content="First Name" />
+            <TextBox Text="{Binding }" />
+
+            <Label Content="Last Name" />
+            <TextBox Text="{Binding LastName}" />
+
+            <Label Content="Email" />
+            <TextBox Text="{Binding Email}" />
+
+            <Label Content="First Name" />
+            <TextBox Text="{Binding FirstName}" />
+
+            <Label Content="Current Club" />
+            <TextBox Text="{Binding CurrentClub}" />
+
+            <Label Content="First Club" />
+            <TextBox Text="{Binding FirstClub}" />
+
+            <Label Content="Position" />
+            <TextBox Text="{Binding Position}" />
+
+            <Label Content="Nationality" />
+            <TextBox Text="{Binding Nationality}" />
+
+            <Label Content="City" />
+            <TextBox Text="{Binding City}" />
+
+            <Label Content="Birthyear" />
+            <TextBox Text="{Binding BirthYear}" />
+
+            <Label Content="Birthmonth" />
+            <TextBox Text="{Binding BirhtMonth}" />
+
+            <Label Content="Birth-day" />
+            <TextBox Text="{Binding BirthDay}" />
+
+            <Button x:Name="BtnSave" Content="Save" Click="BtnSave_Click" />
+
+            <Button Content="Navigate To Menu" Command="{Binding NavigateToMenuCommand}" />
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,33 @@
+﻿<Window x:Class="Presentation.WpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Presentation.WpfApp"
+        
+        xmlns:viewmodels="clr-namespace:Presentation.WpfApp.ViewModels"
+        xmlns:views="clr-namespace:Presentation.WpfApp.Views"
+        
+        mc:Ignorable="d"
+        Title="MainWindow" Height="500" Width="300">
+    <Grid>
+
+        <ContentControl Content="{Binding CurrentViewModel}">
+            <ContentControl.Resources>
+
+                <DataTemplate DataType="{x:Type viewmodels:MenuViewModel}">
+                    <views:MenuView />
+                </DataTemplate>
+
+                <DataTemplate DataType="{x:Type viewmodels:PlayerAddViewModel}">
+                    <views:PlayerAddView />
+                </DataTemplate>
+
+                <DataTemplate DataType="{x:Type viewmodels:PlayerListViewModel}">
+                    <views:PlayerListView />
+                </DataTemplate>
+
+            </ContentControl.Resources>
+        </ContentControl>
+    </Grid>
+</Window>
